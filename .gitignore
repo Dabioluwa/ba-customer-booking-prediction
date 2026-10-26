@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.joblib
+.ipynb_checkpoints/
+
+# Environment
+.env
+.venv/
+venv/
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Large temporary artefacts
+outputs/*.pkl
+outputs/*.joblib

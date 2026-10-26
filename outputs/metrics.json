@@ -1,0 +1,197 @@
+{
+  "dataset": {
+    "raw_rows": 50000,
+    "rows_after_dedup": 49281,
+    "duplicates_removed": 719,
+    "columns": 14,
+    "positive_rate": 0.1499766644345691,
+    "train_rows": 39424,
+    "test_rows": 9857
+  },
+  "model": {
+    "type": "RandomForestClassifier",
+    "n_estimators": 600,
+    "min_samples_leaf": 10,
+    "class_weight": "balanced_subsample",
+    "categorical_encoding": "out-of-fold target encoding",
+    "n_features": 17,
+    "cv_folds": 5,
+    "fit_seconds": 35.4
+  },
+  "cv": {
+    "roc_auc": {
+      "mean": 0.7947515444460123,
+      "std": 0.003487781733751864
+    },
+    "pr_auc": {
+      "mean": 0.3909223599603741,
+      "std": 0.011495713099308521
+    },
+    "accuracy": {
+      "mean": 0.7741476520517703,
+      "std": 0.0031268816753909244
+    },
+    "precision": {
+      "mean": 0.35481112373157736,
+      "std": 0.0036774328053897024
+    },
+    "recall": {
+      "mean": 0.6177892392652252,
+      "std": 0.009794428655791908
+    },
+    "f1": {
+      "mean": 0.4507039226446782,
+      "std": 0.003589303856664883
+    }
+  },
+  "holdout": {
+    "roc_auc": 0.7882712613094046,
+    "pr_auc": 0.3669761672833401,
+    "accuracy": 0.7679821446687634,
+    "precision": 0.3443632166217776,
+    "recall": 0.6055480378890392,
+    "f1": 0.43904831984302184,
+    "brier": 0.14777822371493304,
+    "prevalence": 0.14994420208988535,
+    "confusion_matrix": {
+      "tn": 6675,
+      "fp": 1704,
+      "fn": 583,
+      "tp": 895
+    },
+    "train_rows": 39424,
+    "test_rows": 9857,
+    "fit_seconds": 35.4,
+    "cv_seconds": 68.9
+  },
+  "ranking": [
+    {
+      "target_fraction": 0.05,
+      "customers_contacted": 492,
+      "bookings_captured": 237,
+      "share_of_all_bookings": 0.16035182679296348,
+      "precision_at_k": 0.4817073170731707,
+      "lift_vs_random": 3.212577147760652
+    },
+    {
+      "target_fraction": 0.1,
+      "customers_contacted": 985,
+      "bookings_captured": 422,
+      "share_of_all_bookings": 0.2855209742895805,
+      "precision_at_k": 0.42842639593908627,
+      "lift_vs_random": 2.8572388259618227
+    },
+    {
+      "target_fraction": 0.2,
+      "customers_contacted": 1971,
+      "bookings_captured": 743,
+      "share_of_all_bookings": 0.5027063599458728,
+      "precision_at_k": 0.3769660071029934,
+      "lift_vs_random": 2.5140419025806535
+    },
+    {
+      "target_fraction": 0.3,
+      "customers_contacted": 2957,
+      "bookings_captured": 972,
+      "share_of_all_bookings": 0.6576454668470907,
+      "precision_at_k": 0.32871153195806563,
+      "lift_vs_random": 2.192225690467289
+    },
+    {
+      "target_fraction": 0.5,
+      "customers_contacted": 4928,
+      "bookings_captured": 1275,
+      "share_of_all_bookings": 0.8626522327469553,
+      "precision_at_k": 0.25872564935064934,
+      "lift_vs_random": 1.7254795166775039
+    }
+  ],
+  "comparison": [
+    {
+      "Model": "Logistic regression",
+      "CV ROC-AUC": 0.7797640450581316,
+      "CV PR-AUC": 0.35384815624509824,
+      "CV F1": 0.42479743865902553
+    },
+    {
+      "Model": "Random forest",
+      "CV ROC-AUC": 0.7947515444460123,
+      "CV PR-AUC": 0.3909223599603741,
+      "CV F1": 0.4507039226446782
+    }
+  ],
+  "sensitivity": [
+    {
+      "Model": "With optional-extra fields",
+      "Holdout ROC-AUC": 0.7882712613094046,
+      "Holdout PR-AUC": 0.3669761672833401
+    },
+    {
+      "Model": "Without optional-extra fields",
+      "Holdout ROC-AUC": 0.7811654918596833,
+      "Holdout PR-AUC": 0.3521564315277261
+    }
+  ],
+  "top_drivers": [
+    {
+      "driver": "Booking origin (country)",
+      "importance_mean": 0.11007297735069455,
+      "importance_std": 0.005144652627981883,
+      "importance_pct": 0.4770333454492531
+    },
+    {
+      "driver": "Flight route",
+      "importance_mean": 0.07343658645076935,
+      "importance_std": 0.0037356143588137382,
+      "importance_pct": 0.3182588620399732
+    },
+    {
+      "driver": "Optional extras (all)",
+      "importance_mean": 0.01833000488850185,
+      "importance_std": 0.0019019364299291803,
+      "importance_pct": 0.07943842135027
+    },
+    {
+      "driver": "Length of stay",
+      "importance_mean": 0.010956790347757548,
+      "importance_std": 0.0011101285622127244,
+      "importance_pct": 0.04748444605367884
+    },
+    {
+      "driver": "Sales channel",
+      "importance_mean": 0.006673274838189765,
+      "importance_std": 0.0010382575275001027,
+      "importance_pct": 0.02892058248794067
+    },
+    {
+      "driver": "Flight duration",
+      "importance_mean": 0.005299167598098222,
+      "importance_std": 0.0011429831037219386,
+      "importance_pct": 0.022965488063098415
+    },
+    {
+      "driver": "Purchase lead time",
+      "importance_mean": 0.004881651795790892,
+      "importance_std": 0.0010209752968002286,
+      "importance_pct": 0.021156061583081996
+    },
+    {
+      "driver": "Departure hour (cyclical)",
+      "importance_mean": 0.0005364109416526505,
+      "importance_std": 0.0009750087811006798,
+      "importance_pct": 0.0023246932370775317
+    }
+  ],
+  "figures": [
+    "01_target_balance.png",
+    "02_booking_rate_drivers.png",
+    "03_origin_conversion.png",
+    "04_correlation_heatmap.png",
+    "05_roc_pr_curves.png",
+    "06_confusion_matrix.png",
+    "07_targeting_lift.png",
+    "08_permutation_importance.png",
+    "09_cv_metrics.png",
+    "slide_driver_importance.png"
+  ]
+}
